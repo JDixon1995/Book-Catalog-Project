@@ -3,3 +3,51 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    background-color: grey;
+    height: 100%;
+}
+
+#header {
+    height: 10vh;
+    background-color: black;
+}
+
+#header h2 {
+    color: white;
+}
+
+#btn-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    font-size: 1rem;
+    border-radius: .5rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    color: white;
+    background-color: black;
+}
+
+footer {
+    height: 5vh;
+    background-color: whitesmoke;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+li {
+    list-style-type: none;
+    margin-right: 1rem;
+}
