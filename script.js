@@ -40,10 +40,16 @@ function addBookToLibrary() {
 
 function displayLibrary() {
     let bookList = document.getElementById("book-list");
-    let book = document.createElement("ul");
-    book.id = "book";
+
         for(i = 0; i < myLibrary.length; i++) {
-            
+            let book = document.createElement("ul");
+            book.className = "book-item";
+            let deleteButton = document.createElement("button");
+            deleteButton.innerText = "X";
+            deleteButton.addEventListener("click", function() {
+                book.closest("ul").remove();
+            })
+            book.appendChild(deleteButton);
             let title = document.createElement("li");
             let author = document.createElement("li");
             let pageCount = document.createElement("li");
