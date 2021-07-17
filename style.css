@@ -49,6 +49,12 @@ ul {
     grid-template-columns: repeat(auto auto);
 }
 
+.book-item button {
+    font-size: 1rem;
+    padding: 0;
+    margin: 5px;
+}
+
 button:hover {
     color: white;
     background-color: black;

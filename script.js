@@ -44,6 +44,12 @@ function displayLibrary() {
         for(i = 0; i < myLibrary.length; i++) {
             let book = document.createElement("ul");
             book.className = "book-item";
+            let readButton = document.createElement("button");
+            readButton.innerText = "Unread";
+            book.appendChild(readButton);
+            readButton.addEventListener("click", function() {
+                readButton.innerText = "Read"
+            })
             let deleteButton = document.createElement("button");
             deleteButton.innerText = "X";
             deleteButton.addEventListener("click", function() {
@@ -65,6 +71,14 @@ function displayLibrary() {
             bookList.appendChild(book);
 
         }
+}
+
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
 }
 
 displayLibrary();
