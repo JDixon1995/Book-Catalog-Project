@@ -39,12 +39,26 @@ function addBookToLibrary() {
 }
 
 function displayLibrary() {
-    for(i = 0; i < myLibrary.length; i++) {
-        console.log(myLibrary[i].title);
-        console.log(myLibrary[i].author);
-        console.log(myLibrary[i].pages);
-        console.log(myLibrary[i].read);
-    }
+    let bookList = document.getElementById("book-list");
+    let book = document.createElement("ul");
+    book.id = "book";
+        for(i = 0; i < myLibrary.length; i++) {
+            
+            let title = document.createElement("li");
+            let author = document.createElement("li");
+            let pageCount = document.createElement("li");
+            let readStatus = document.createElement("li");
+            title.innerText = myLibrary[i].title;
+            author.innerText = myLibrary[i].author;
+            pageCount.innerText = myLibrary[i].pages;
+            readStatus.innerText = myLibrary[i].read;
+            book.appendChild(title);
+            book.appendChild(author);
+            book.appendChild(pageCount);
+            book.appendChild(readStatus);
+            bookList.appendChild(book);
+
+        }
 }
 
 displayLibrary();

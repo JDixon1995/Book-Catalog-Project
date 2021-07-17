@@ -32,6 +32,10 @@ button {
     cursor: pointer;
 }
 
+#book {
+    border: 1px solid black;
+}
+
 button:hover {
     color: white;
     background-color: black;
