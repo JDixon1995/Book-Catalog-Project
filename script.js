@@ -24,6 +24,12 @@ let myLibrary = [
         "author": "Sullivan, Daniel J.",
         "pages": 364,
         "read" : true,
+    },
+    {
+        "title": "Rise and Fall of the Roman Empire",
+        "author": "Gibbons",
+        "pages": 763,
+        "read": false
     }
 ];
 
@@ -37,6 +43,7 @@ function Book(title, author, pages, haveRead) {
 function addBookToLibrary() {
     
 }
+
 
 function displayLibrary() {
     let bookList = document.getElementById("book-list");
@@ -59,26 +66,15 @@ function displayLibrary() {
             let title = document.createElement("li");
             let author = document.createElement("li");
             let pageCount = document.createElement("li");
-            let readStatus = document.createElement("li");
             title.innerText = myLibrary[i].title;
             author.innerText = myLibrary[i].author;
             pageCount.innerText = myLibrary[i].pages;
-            readStatus.innerText = myLibrary[i].read;
             book.appendChild(title);
             book.appendChild(author);
             book.appendChild(pageCount);
-            book.appendChild(readStatus);
             bookList.appendChild(book);
 
         }
-}
-
-function openForm() {
-    document.getElementById("myForm").style.display = "block";
-}
-
-function closeForm() {
-    document.getElementById("myForm").style.display = "none";
 }
 
 displayLibrary();
