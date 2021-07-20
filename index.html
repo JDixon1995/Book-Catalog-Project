@@ -12,14 +12,24 @@
     <div id="header">
         <h2>Your Library</h2>
     </div>
+
+    <div id="formDiv">
+        <form>
+            Name of Book:<input type="text" id="bookName"></input>
+            Author of Book:<input type="text" id="authorName"></input>
+            # of Pages:<input type="number" id="bookPages"></input>
+        </form>
+    </div>
+
     <div id="btn-div">
-    <button id="newBook" onclick="openForm()">Add Book!</button>
+    <button id="newBook" onclick="appendBookLibrary()">Add Book!</button>
     </div>
 
     <div id="libraryDisplay">
     <h3>Your Bookcase</h3>
         <div id="book-list"></div>
     </div>
+
     <footer id="footer">
         <ul>
             <li>Home</li>

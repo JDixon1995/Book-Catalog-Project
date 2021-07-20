@@ -27,16 +27,18 @@ body {
 button {
     font-size: 1rem;
     border-radius: .5rem;
-    margin-top: 1rem;
+    margin: 1rem;
     padding: 1rem;
     cursor: pointer;
 }
 
 #libraryDisplay {
+    width: 95%;
     border: 2px solid black;
     border-radius: 1rem;
     padding: 1rem;
-    margin: 1rem;
+    margin: auto;
+    background-color: rgb(128, 17, 17);
 }
 
 ul {
@@ -47,15 +49,18 @@ ul {
     width: 8rem;
     background-color: antiquewhite;
     padding: 1rem;
-    margin: 2rem;
+    margin: 1rem;
     border-radius: 1.25rem;
-    text-align: center;
+    text-align: left;
+    font-size: small;
 }
 
 #book-list {
+    width: 100%;
+    margin: 1rem;
     display: grid;
-    grid-template-columns: repeat(4, 25%);
-    grid-template-columns: repeat(auto auto);
+    grid-template-columns: repeat(8, auto);
+    grid-template-rows: repeat(auto, auto);
 }
 
 .book-item button {
@@ -67,6 +72,14 @@ ul {
 button:hover {
     color: white;
     background-color: black;
+}
+
+#formDiv {
+    margin: .5rem;
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 footer {

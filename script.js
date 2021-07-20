@@ -8,7 +8,7 @@ let myLibrary = [
         "read": false 
     },
     {
-        "title": "Human Accoplishment",
+        "title": "Human Accomplishment",
         "author": "Murray, Charles",
         "pages": 588,
         "read" : true,
@@ -30,6 +30,12 @@ let myLibrary = [
         "author": "Gibbons",
         "pages": 763,
         "read": false
+    },
+    {
+        "title": "Resident Evil: The Umbrella Conspiracy",
+        "author": "S.D. Perry",
+        "pages": 262,
+        "read": true
     }
 ];
 
@@ -40,8 +46,21 @@ function Book(title, author, pages, haveRead) {
     this.haveRead = haveRead;
 }
 
-function addBookToLibrary() {
-    
+function appendBookLibrary() {
+    let titleInput = document.getElementById("bookName").value;
+    let authorInput = document.getElementById("authorInput").value;
+    let pageInput = document.getElementById("bookPages").value;
+
+    new Book = {
+        "title": titleInput.value,
+        "author": authorInput.value,
+        "pages": pageInput.value,
+        "haveRead": false
+    };
+    myLibrary.push(Book);
+    titleInput.value = "";
+    authorInput.value = "";
+    pageInput.value = "";
 }
 
 
@@ -55,8 +74,11 @@ function displayLibrary() {
             readButton.innerText = "Unread";
             book.appendChild(readButton);
             readButton.addEventListener("click", function() {
-                readButton.innerText = "Read"
+                if(this.innerText = "Unread") {
+                readButton.innerText = "Read";
+                }
             })
+
             let deleteButton = document.createElement("button");
             deleteButton.innerText = "X";
             deleteButton.addEventListener("click", function() {
