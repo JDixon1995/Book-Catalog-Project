@@ -39,28 +39,27 @@ let myLibrary = [
     }
 ];
 
-function Book(title, author, pages, haveRead) {
+class Book {
+    constructor(title, author, pages, haveRead) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.haveRead = haveRead;
+    }
 }
 
 function appendBookLibrary() {
-    let titleInput = document.getElementById("bookName").value;
-    let authorInput = document.getElementById("authorInput").value;
-    let pageInput = document.getElementById("bookPages").value;
 
-    new Book = {
-        "title": titleInput.value,
-        "author": authorInput.value,
-        "pages": pageInput.value,
-        "haveRead": false
-    };
-    myLibrary.push(Book);
-    titleInput.value = "";
-    authorInput.value = "";
-    pageInput.value = "";
+    let newBook = new Book(
+        title = document.getElementById("bookName").value,
+        author = document.getElementById("authorName").value,
+        pages = document.getElementById("bookPages").value,
+        read = false
+    );
+
+    myLibrary = [myLibrary + newBook];
+    console.log(newBook);
+    displayLibrary();
 }
 
 
