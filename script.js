@@ -1,6 +1,6 @@
 //Book Catalog
 
-let myLibrary = [
+    let myLibrary = [
     {
         "title": "Lord Of The Rings",
         "author": "Tolkien, J.R.R.",
@@ -39,60 +39,69 @@ let myLibrary = [
     }
 ];
 
-class Book {
-    constructor(title, author, pages, haveRead) {
+function Book(title, author, pages, haveRead) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.haveRead = haveRead;
     }
-}
+
 
 function appendBookLibrary() {
 
+    let bookNameInput = document.getElementById("bookName");
+    let authorInput = document.getElementById("authorName");
+    let pageCountInput = document.getElementById("bookPages");
+
+
     let newBook = new Book(
-        title = document.getElementById("bookName").value,
-        author = document.getElementById("authorName").value,
-        pages = document.getElementById("bookPages").value,
+        title = bookNameInput.value,
+        author = authorInput.value,
+        pages = pageCountInput.value,
         read = false
     );
 
-    myLibrary = [myLibrary + newBook];
-    console.log(newBook);
-    displayLibrary();
+    myLibrary[myLibrary.length] = newBook;
 }
 
 
 function displayLibrary() {
     let bookList = document.getElementById("book-list");
 
-        for(i = 0; i < myLibrary.length; i++) {
-            let book = document.createElement("ul");
-            book.className = "book-item";
+        for(let i = 0; i < myLibrary.length; i++) {
+
+            let book = document.createElement("ul"); 
+            let title = document.createElement("li");
+            let author = document.createElement("li");
+            let pageCount = document.createElement("li");
             let readButton = document.createElement("button");
+            let deleteButton = document.createElement("button");
+
+            book.className = "book-item";
+
+            title.innerText = myLibrary[i].title;
+            author.innerText = myLibrary[i].author;
+            pageCount.innerText = myLibrary[i].pages;
             readButton.innerText = "Unread";
-            book.appendChild(readButton);
+            deleteButton.innerText = "X";
+
+            //Event Listeners
             readButton.addEventListener("click", function() {
                 if(this.innerText = "Unread") {
                 readButton.innerText = "Read";
                 }
             })
 
-            let deleteButton = document.createElement("button");
-            deleteButton.innerText = "X";
             deleteButton.addEventListener("click", function() {
                 book.closest("ul").remove();
             })
+
             book.appendChild(deleteButton);
-            let title = document.createElement("li");
-            let author = document.createElement("li");
-            let pageCount = document.createElement("li");
-            title.innerText = myLibrary[i].title;
-            author.innerText = myLibrary[i].author;
-            pageCount.innerText = myLibrary[i].pages;
+            book.appendChild(readButton);
             book.appendChild(title);
             book.appendChild(author);
             book.appendChild(pageCount);
+
             bookList.appendChild(book);
 
         }
