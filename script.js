@@ -1,6 +1,6 @@
 //Book Catalog
 
-    let myLibrary = [
+let myLibrary = [
     {
         "title": "Lord Of The Rings",
         "author": "Tolkien, J.R.R.",
@@ -48,10 +48,45 @@ function Book(title, author, pages, haveRead) {
 
 
 function appendBookLibrary() {
-
+    let bookList = document.getElementById("book-list");
     let bookNameInput = document.getElementById("bookName");
     let authorInput = document.getElementById("authorName");
     let pageCountInput = document.getElementById("bookPages");
+    let book = document.createElement("ul"); 
+    let title = document.createElement("li");
+    let author = document.createElement("li");
+    let pageCount = document.createElement("li");
+    let readButton = document.createElement("button");
+    let deleteButton = document.createElement("button");
+
+            book.className = "book-item";
+
+            title.innerText = bookNameInput.value;
+            author.innerText = authorInput.value;
+            pageCount.innerText = pageCountInput.value;
+            readButton.innerText = "Unread";
+            deleteButton.innerText = "X";
+
+            //Event Listeners
+            readButton.addEventListener("click", function() {
+                if(this.innerText = "Unread") {
+                readButton.innerText = "Read";
+                }
+            })
+
+            deleteButton.addEventListener("click", function() {
+                book.closest("ul").remove();
+            })
+
+            book.appendChild(deleteButton);
+            book.appendChild(readButton);
+            book.appendChild(title);
+            book.appendChild(author);
+            book.appendChild(pageCount);
+
+            bookList.appendChild(book);
+
+
 
 
     let newBook = new Book(
@@ -62,6 +97,11 @@ function appendBookLibrary() {
     );
 
     myLibrary[myLibrary.length] = newBook;
+    bookNameInput.value = "";
+    authorInput.value = "";
+    pageCountInput.value = "";
+
+    
 }
 
 
@@ -106,5 +146,4 @@ function displayLibrary() {
 
         }
 }
-
 displayLibrary();

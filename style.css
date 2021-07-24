@@ -51,6 +51,8 @@ ul {
     padding: 1rem;
     margin: 1rem;
     border-radius: 1.25rem;
+    border-bottom: 3px solid black;
+    border-right: 3px solid black;
     text-align: left;
     font-size: small;
 }
