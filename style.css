@@ -84,6 +84,14 @@ button:hover {
     align-items: center;
 }
 
+.formDivOpen {
+    display: block;
+}
+
+.formDivClosed {
+    display: none;
+}
+
 footer {
     height: 5vh;
     background-color: whitesmoke;
