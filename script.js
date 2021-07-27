@@ -43,7 +43,7 @@ function Book(title, author, pages, haveRead) {
     this.title = title;
     this.author = author;
     this.pages = pages;
-    this.haveRead = haveRead;
+    this.read = read;
     }
 
 
@@ -69,10 +69,13 @@ function appendBookLibrary() {
 
             //Event Listeners
             readButton.addEventListener("click", function() {
-                if(this.innerText = "Unread") {
-                readButton.innerText = "Read";
+                if(this.haveRead = false) {
+                    this.haveRead = true;
+                    readButton.innerText = "Unread";
+                    console.log(this.haveRead);
                 }
             })
+
 
             deleteButton.addEventListener("click", function() {
                 book.closest("ul").remove();
@@ -122,13 +125,21 @@ function displayLibrary() {
             title.innerText = myLibrary[i].title;
             author.innerText = myLibrary[i].author;
             pageCount.innerText = myLibrary[i].pages;
-            readButton.innerText = "Unread";
+            readButton.innerText = myLibrary[i].read;
+            if(readButton.innerText == "true"){
+                readButton.innerText = "Read";
+            } else if(readButton.innerText == "false"){
+                readButton.innerText = "Unread";
+            }
             deleteButton.innerText = "X";
 
             //Event Listeners
             readButton.addEventListener("click", function() {
-                if(this.innerText = "Unread") {
+                if(readButton.innerText == "Unread") {
                 readButton.innerText = "Read";
+                }
+                else if(readButton.innerText == "Read") {
+                readButton.innerText = "Unread";
                 }
             })
 
