@@ -52,6 +52,7 @@ function appendBookLibrary() {
     let bookNameInput = document.getElementById("bookName");
     let authorInput = document.getElementById("authorName");
     let pageCountInput = document.getElementById("bookPages");
+    let readOrUnread = document.getElementById("readOrUnread");
     let book = document.createElement("ul"); 
     let title = document.createElement("li");
     let author = document.createElement("li");
@@ -64,15 +65,14 @@ function appendBookLibrary() {
             title.innerText = bookNameInput.value;
             author.innerText = authorInput.value;
             pageCount.innerText = pageCountInput.value;
-            readButton.innerText = "Unread";
+            readButton.innerText = readOrUnread.value;
             deleteButton.innerText = "X";
 
             //Event Listeners
+            
             readButton.addEventListener("click", function() {
-                if(this.haveRead = false) {
-                    this.haveRead = true;
-                    readButton.innerText = "Unread";
-                    console.log(this.haveRead);
+                if(readButton.innerText == "Unread") {
+                    readButton.innerText = "Read";
                 }
             })
 
@@ -103,7 +103,7 @@ function appendBookLibrary() {
     bookNameInput.value = "";
     authorInput.value = "";
     pageCountInput.value = "";
-
+    readOrUnread.value = "";
     
 }
 
