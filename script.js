@@ -73,7 +73,10 @@ function appendBookLibrary() {
             readButton.addEventListener("click", function() {
                 if(readButton.innerText == "Unread") {
                     readButton.innerText = "Read";
+                } else if(readButton.innerText == "Read") {
+                    readButton.innerText = "Unread";
                 }
+
             })
 
 
