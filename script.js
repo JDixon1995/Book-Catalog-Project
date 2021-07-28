@@ -39,7 +39,7 @@ let myLibrary = [
     }
 ];
 
-function Book(title, author, pages, haveRead) {
+function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
@@ -65,8 +65,10 @@ function appendBookLibrary() {
             title.innerText = bookNameInput.value;
             author.innerText = authorInput.value;
             pageCount.innerText = pageCountInput.value;
+         
             readButton.innerText = readOrUnread.value;
             deleteButton.innerText = "X";
+            deleteButton.className = "xButton";
 
             //Event Listeners
             
@@ -129,12 +131,14 @@ function displayLibrary() {
             author.innerText = myLibrary[i].author;
             pageCount.innerText = myLibrary[i].pages;
             readButton.innerText = myLibrary[i].read;
+
             if(readButton.innerText == "true"){
                 readButton.innerText = "Read";
             } else if(readButton.innerText == "false"){
                 readButton.innerText = "Unread";
             }
             deleteButton.innerText = "X";
+            deleteButton.className = "xButton";
 
             //Event Listeners
             readButton.addEventListener("click", function() {

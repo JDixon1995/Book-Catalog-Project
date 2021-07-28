@@ -36,9 +36,11 @@ button {
     width: 95%;
     border: 2px solid black;
     border-radius: 1rem;
+    border-top: 3px black solid;
+    border-left: 3px black solid;
     padding: 1rem;
     margin: auto;
-    background-color: rgb(128, 17, 17);
+    background-color: white;
 }
 
 ul {
@@ -64,6 +66,7 @@ ul {
     grid-template-columns: repeat(8, auto);
     grid-template-rows: repeat(auto, auto);
 }
+
 
 .book-item button {
     font-size: 1rem;
@@ -99,7 +102,6 @@ footer {
     bottom: 0;
     width: 100%;
     display: flex;
-    justify-content: flex-end;
 }
 
 li {
